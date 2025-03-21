@@ -203,6 +203,11 @@ p:last-child {
 .pb-75 {
     padding-bottom: 75px;
 }
+.header-navbar{
+    padding: 15px;
+}
+.header-navbar .nav-item.dropdown,
+.header-navbar .nav-link{margin: 0px 10px;font-weight: 300; color: var(--blackColor);}
 
 .bg-overlay {
     position: absolute;
@@ -283,7 +288,7 @@ background-image: url('./assets/images/servce-bg.png');
 
 .s-title {
     width: 100%;
-    max-width: 900px;
+    max-width: 930px;
     margin: 0 auto;
 }
 
@@ -300,7 +305,7 @@ background-image: url('./assets/images/servce-bg.png');
     margin-bottom: 40px;
     cursor: default !important;
 }
-/* 
+
 .sub-title {
     position: relative;
     display: inline-block;
@@ -320,7 +325,7 @@ background-image: url('./assets/images/servce-bg.png');
     background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
-} */
+}
 
 
 /* .default-btn::before {
@@ -328,12 +333,10 @@ background-image: url('./assets/images/servce-bg.png');
     border: 1px solid var(--white-color);
 } */
 
-.s-title {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+.default-btn span{
+    display: inline-block;
+    margin-right: 5px;
 }
-
 .full-width-title {
     max-width: 100%;
 }
@@ -598,7 +601,7 @@ background-image: url('./assets/images/servce-bg.png');
     right: auto;
     bottom: auto;
     left: 20px;
-    background: linear-gradient(90.15deg, var(--accent-color) 1.15%, var(--accent-secondary-color) 98.84%);
+    background: var(--text-color);
     border-radius: 30px;
     width: 100%;
     height: 100%;
@@ -1005,6 +1008,21 @@ background-image: url('./assets/images/servce-bg.png');
 
 .about-section-content .content-card .content h3 {
     color: var(--accent-secondary-color);
+}
+.contact-box{
+    position: relative;
+}
+.contact-overlay{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.contact-box img{
+    width: 100%;
+    z-index: -1;
+    position: relative;
 }
 
 .a-partner-ecosection {
@@ -1561,11 +1579,21 @@ Top Header Area Style
 .about-section-content .content-card .icon {
     width: 80px;
     height: 80px;
-    line-height: 80px;
-    margin-right: 0;
-    margin-bottom: 20px;
+    display: flex;
+    margin: 0px 30px;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    align-items: center;
+    justify-content: center;
 }
-
+.about-section-content .content-card .icon img{
+    object-fit: contain;
+    height: 40px;
+    width: 40px;
+}
+.about-section-content .content-card .content {
+    flex: 1;
+}
 .about-section-content .content-card .content h3 {
     font-size: 18px;
 }
@@ -1642,12 +1670,11 @@ Top Header Area Style
 
 
 .main-footer{
-	/* background: url(../images/footer-bg.png), linear-gradient(90.15deg, var(--accent-color) 1.15%, var(--accent-secondary-color) 98.84%); */
-    background-color: #000000;
-	background-repeat: no-repeat;
-	background-position: center center;
-	background-size: 100% auto;
-	padding: 80px 0 0 0;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    padding: 80px 0 0;
     position: relative;
 }
 .main-footer .fg-overlay{
@@ -1656,7 +1683,17 @@ Top Header Area Style
     left: 0;
     width: 100%;
     height: 100%;
-    /* z-index: -1; */
+    z-index: -1;
+}
+footer.main-footer:after {
+    background: #000;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+    content: '';
+    z-index: -2;
 }
 
 .footer-header{
@@ -1667,8 +1704,8 @@ Top Header Area Style
     border-bottom: 1px solid var(--dark-divider-color);
     margin-bottom: 80px;
     padding-bottom: 50px;
+   
 }
-
 .footer-logo img{
 	width: 100%;
 	max-width: 223px;
@@ -1763,10 +1800,11 @@ Top Header Area Style
 .footer-links ul li a{
 	color: inherit;
 	transition: all 0.3s ease-in-out;
+    text-decoration: none;
 }
 
 .footer-links ul li a:hover{
-	color: var(--primary-color);
+	color: var(--text-color);
 }
 
 .footer-copyright{
@@ -1782,4 +1820,44 @@ Top Header Area Style
 .footer-copyright-text p{
 	color: var(--white-color);
 	margin-bottom: 0;
+}
+
+@media screen and (max-width: 1440px) {
+    .s-title .h2 {
+        font-size: 38px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .securitytabs .nav-item {
+        width: calc(100% - 15px);
+        margin: 15px;
+    }
+    
+    .s-title .h2 {
+        font-size: 36px;
+    }
+    .testimonial-video-button {
+        text-align: center;
+        margin-top: 60px !important;
+    }
+    .testimonial-slider{
+        margin-top: 0;
+    }
+    .t-overlay img{
+        height: 100% !important;
+    }
+    .testimonial-video-button, .testimonial-slider-box {
+        position: relative;
+        width: calc(100% - 50px);
+        z-index: 1;
+        margin: 0px auto;
+    }
+    .what-we-do {
+        position: relative;
+        padding-top: 0;
+    }
+    .banner-section {
+        position: relative;
+        height: 600px;
+    }
 }
